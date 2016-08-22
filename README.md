@@ -8,3 +8,15 @@
  * Applications
     * write form declarations in JSON (as opposed to: HTML)
     * validate forms with JSON schema (as opposed to: Markup validation)
+
+
+
+## Mime Type, Content Type
+
+```
+application/forms+json
+```
+
+```
+Content-Type: application/forms+json; profile=http://example.com/my-hyper-schema#
+```

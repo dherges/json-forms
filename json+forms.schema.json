@@ -1,0 +1,138 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "JSON Schema for JSON forms",
+  "description": "A form declared in JSON.",
+  "type": "object",
+  "properties": {
+    "_controls": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/formControl"
+      }
+    },
+    "acceptCharset": {
+      "type": "string"
+    },
+    "action": {
+      "type": "string"
+    },
+    "autocomplete": { 
+      "type": "string"
+    },
+    "enctype": { 
+      "type": "string"
+    },
+    "encoding": { 
+      "type": "string"
+    },
+    "method": { 
+      "enum": ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS", "HEAD"]
+    },
+    "name": { 
+      "type": "string"
+    },
+    "noValidate": {
+      "type": "boolean"
+    },
+    "target": { 
+      "type": "string"
+    }
+  },
+  "definitions": {
+    "formControl": {
+      "type": "object",
+      "oneOf": [
+        { "$ref": "#/definitions/fieldset" },
+        { "$ref": "#/definitions/input" },
+        { "$ref": "#/definitions/label" },
+        { "$ref": "#/definitions/legend" }
+      ]
+    },
+    "fieldset": {
+      "type": "object"
+    },
+    "input": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "enum": [
+            "hidden",
+            "text",
+            "search",
+            "tel",
+            "url",
+            "email",
+            "password",
+            "date",
+            "time",
+            "number",
+            "range",
+            "color",
+            "checkbox",
+            "radio",
+            "file",
+            "submit",
+            "image",
+            "reset",
+            "button"
+          ]
+        },
+        "maxlength": {
+          "type": "string"
+        },
+        "minlength": {
+          "type": "string"
+        },
+        "size": {
+          
+        },
+        "readonly": {
+          
+        },
+        "required": {
+          
+        },
+        "multiple": {
+          
+        },
+        "pattern": {
+          
+        },
+        "min": {
+          
+        },
+        "max": {
+          
+        },
+        "step": {
+          
+        },
+        "list": {
+          
+        },
+        "placeholder": {
+          
+        }
+      },
+      "required": ["type"]
+    },
+    "label": {
+      "type": "object",
+      "properties": {
+        "for": {
+          "type": "string"
+        }
+      }
+    },
+    "legend": {
+      "type": "object",
+      "properties": {
+        "_content": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
+
+
